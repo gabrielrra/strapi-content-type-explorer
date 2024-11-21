@@ -1,27 +1,27 @@
+import React from 'react';
 import {
   Checkbox,
   SingleSelect,
   SingleSelectOption,
-} from "@strapi/design-system";
-import React from "react";
-import { useDigramStore } from "../store";
+} from '@strapi/design-system';
+import { useDigramStore } from '../store';
 
 export function OptionsBar() {
   const { options, toggleOption } = useDigramStore();
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        padding: "0 56px 24px",
-        gap: "24px",
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        padding: '0 56px 24px',
+        gap: '24px',
       }}
     >
       <Checkbox
         name="show-type-names"
         onValueChange={() => {
-          toggleOption("showTypes");
+          toggleOption('showTypes');
         }}
         value={options.showTypes}
       >
@@ -29,49 +29,49 @@ export function OptionsBar() {
       </Checkbox>
       <Checkbox
         name="show-icons"
-        onValueChange={() => toggleOption("showIcons")}
+        onValueChange={() => toggleOption('showIcons')}
         value={options.showIcons}
       >
         Data Type Icons
       </Checkbox>
       <Checkbox
         name="show-default-fields"
-        onValueChange={() => toggleOption("showDefaultFields")}
+        onValueChange={() => toggleOption('showDefaultFields')}
         value={options.showDefaultFields}
       >
         Default Fields
       </Checkbox>
       <Checkbox
         name="show-relations-only"
-        onValueChange={() => toggleOption("showRelationsOnly")}
+        onValueChange={() => toggleOption('showRelationsOnly')}
         value={options.showRelationsOnly}
       >
         Relational Fields Only
       </Checkbox>
       <Checkbox
         name="show-admin-types"
-        onValueChange={() => toggleOption("showAdminTypes")}
+        onValueChange={() => toggleOption('showAdminTypes')}
         value={options.showAdminTypes}
       >
         admin:: Types
       </Checkbox>
       <Checkbox
         name="show-plugin-types"
-        onValueChange={() => toggleOption("showPluginTypes")}
+        onValueChange={() => toggleOption('showPluginTypes')}
         value={options.showPluginTypes}
       >
         plugin:: Types
       </Checkbox>
       <Checkbox
         name="show-edges"
-        onValueChange={() => toggleOption("showEdges")}
+        onValueChange={() => toggleOption('showEdges')}
         value={options.showEdges}
       >
         Edges
       </Checkbox>
       <Checkbox
         name="snap-to-grid"
-        onValueChange={() => toggleOption("snapToGrid")}
+        onValueChange={() => toggleOption('snapToGrid')}
         value={options.snapToGrid}
       >
         Snap To Grid
@@ -80,7 +80,7 @@ export function OptionsBar() {
       <SingleSelect
         // label="Edge Type"
         value={options.edgeType}
-        onChange={(type) => toggleOption("edgeType", type)}
+        onChange={(type) => toggleOption('edgeType', type)}
       >
         <SingleSelectOption value="smartbezier">
           Smart Bezier
@@ -100,7 +100,7 @@ export function OptionsBar() {
       <SingleSelect
         // label="Background"
         value={options.backgroundPattern}
-        onChange={(pattern) => toggleOption("backgroundPattern", pattern)}
+        onChange={(pattern) => toggleOption('backgroundPattern', pattern)}
       >
         <SingleSelectOption value="dots">Dots</SingleSelectOption>
         <SingleSelectOption value="lines">Lines</SingleSelectOption>

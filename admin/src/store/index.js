@@ -1,12 +1,12 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { addEdge, applyNodeChanges, applyEdgeChanges } from "reactflow";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { addEdge, applyNodeChanges, applyEdgeChanges } from 'reactflow';
 import {
   createEdegs,
   createNodes,
   updateEdges,
   updateNodes,
-} from "../utils/dataUtils";
+} from '../utils/dataUtils';
 
 export const useDigramStore = create(
   persist(
@@ -25,8 +25,8 @@ export const useDigramStore = create(
         showPluginTypes: false,
         showEdges: false,
         scrollMode: true,
-        edgeType: "smartbezier",
-        backgroundPattern: "dots",
+        edgeType: 'smartbezier',
+        backgroundPattern: 'dots',
       },
       setData: (contentTypesData) => {
         set({
@@ -67,12 +67,12 @@ export const useDigramStore = create(
         let typesToDraw = get().data;
         if (!options.showAdminTypes) {
           typesToDraw = typesToDraw.filter(
-            (x) => !x.name.startsWith("admin::")
+            (x) => !x.name.startsWith('admin::')
           );
         }
         if (!options.showPluginTypes) {
           typesToDraw = typesToDraw.filter(
-            (x) => !x.name.startsWith("plugin::")
+            (x) => !x.name.startsWith('plugin::')
           );
         }
         let newNodes = createNodes(typesToDraw, options);
@@ -96,7 +96,7 @@ export const useDigramStore = create(
       },
     }),
     {
-      name: "strapi-content-type-explorer",
+      name: 'strapi-content-type-explorer',
     }
   )
 );
